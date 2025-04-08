@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="ion-margin title">Inicio de Sesión</h1>
+
+  <form [formGroup]="formLogin" (submit)="iniciarSesion()" class="formulario ion-margin">
+
+    <ion-input label="Identificación" label-placement="floating" fill="outline" mode="md"
+      style="margin-bottom: 20px;" clearInput="true" maxlength="100" formControlName="identificacion"
+      required="true"></ion-input>
+
+    <ion-input label="Contraseña" label-placement="floating" fill="outline" mode="md"
+      style="margin-bottom: 20px;" clearInput="true" minlength="8" maxlength="20" formControlName="clave"
+      required="true" type="password" inputmode="password"></ion-input>
+      
+      <ion-button style="margin-top: 15px;" mode="ios" type="submit" expand="block" color="secondary">
+        Iniciar Sesión
+      </ion-button> 
+      
+  </form>
+</ion-content>

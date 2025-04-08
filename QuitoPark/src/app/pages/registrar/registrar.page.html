@@ -1,0 +1,50 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1 class="ion-margin title">Registro</h1>
+
+  <form [formGroup]="formRegistro" (submit)="registrarUsuario()" class="ion-margin">
+
+    <ion-input label="Identificación" label-placement="floating" fill="outline" mode="md" style="margin-bottom: 15px;"
+      clearInput="true" minlength="5" maxlength="13" formControlName="identificacion" required="true" type="tel"
+      inputmode="tel"></ion-input>
+
+    <ion-input label="Nombres" label-placement="floating" fill="outline" mode="md" style="margin-bottom: 15px;"
+      clearInput="true" minlength="3" maxlength="15" formControlName="nombre" required="true" type="text"
+      inputmode="text"></ion-input>
+
+    <ion-input label="Apellidos" label-placement="floating" fill="outline" mode="md" style="margin-bottom: 15px;"
+      clearInput="true" minlength="3" maxlength="15" formControlName="apellido" required="true" type="text"
+      inputmode="text"></ion-input>
+
+    <ion-input label="Email" label-placement="floating" fill="outline" mode="md" style="margin-bottom: 15px;"
+      clearInput="true" maxlength="60" formControlName="correo" required="true" type="email"></ion-input>
+
+    <ion-input label="Telefono" label-placement="floating" fill="outline" mode="md" style="margin-bottom: 15px;"
+      clearInput="true" maxlength="10" formControlName="telefono" required="true" type="tel"
+      inputmode="tel"></ion-input>
+
+    <ion-input label="Contraseña (Mínimo 8 caracteres)" label-placement="floating" fill="outline" mode="md"
+      style="margin-bottom: 15px;" clearInput="true" minlength="8" maxlength="20" formControlName="clave"
+      required="true" type="password" inputmode="password"></ion-input>
+
+    <ion-input label="Repetir contraseña" label-placement="floating" fill="outline" placeholder="Confirmar Contraseña"
+      mode="md" style="margin-bottom: 15px;" clearInput="true" minlength="8" maxlength="20"
+      formControlName="claveRepeat" required="true" type="password" inputmode="password"></ion-input>
+
+    <!-- <ion-button fill="clear" expand="block" color="primary"
+        style="margin-top: 15px;text-decoration: underline;font-weight: bold;font-size: small;"
+        (click)="abrirTerminosCondiciones()">Leer Términos y Condiciones</ion-button> -->
+    <ion-button style="margin-top: 15px;" mode="ios" type="submit" expand="block" color="secondary"
+      [disabled]="formRegistro.invalid">Registrar</ion-button>
+
+  </form>
+
+</ion-content>

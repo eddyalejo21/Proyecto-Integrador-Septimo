@@ -1,0 +1,34 @@
+.imagen-container {
+    background-size: cover;
+    height: 15vh;
+
+    .chip-container {
+        height: 15px;
+        display: flex;
+        justify-content: end;
+    }
+
+    ion-chip {
+        position: relative;
+        top: 13vh;
+        background: var(ion-color-secondary);
+        box-shadow: 2px 1px 2px rgb(172, 1, 1);
+    }
+}
+
+ion-toolbar {
+    --background: #fff;
+}
+
+ion-item-divider {
+    --background: var(--ion-color-secondary);
+    --color: #fff;
+}
+
+ion-card-title{
+    --color: var(--ion-color-secondary);
+}
+
+ion-card-subtitle{
+    --color: var(--ion-color-primary);
+}

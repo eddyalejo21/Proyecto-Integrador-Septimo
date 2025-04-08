@@ -1,0 +1,13 @@
+ion-toolbar{
+    --background: transparent;
+}
+
+.title{
+    font-weight: bold;
+    color: var(--ion-color-primary);
+}
+
+.formulario{
+    // transform: translateY(3vh);
+    margin-top: 20px;
+}

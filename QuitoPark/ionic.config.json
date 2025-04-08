@@ -1,0 +1,7 @@
+{
+  "name": "QuitoPark",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <div align="center">
+    <ion-img src="assets/icon/util/logoQuitoATuAlcance.svg" style="width: 50vw;"></ion-img>
+  </div>
+
+  <div class="title-container">
+    <div class="title-wrapper">
+      <p class="title">Estacionamientos</p>
+    </div>
+  </div>
+
+  <ion-segment (ionChange)="segmentChanged($event)" value="N"
+    style="padding: 7px 7px;border-radius: 0;background-color: transparent;margin-top: 10px;" mode="ios" scrollable>
+    <!-- <ion-segment-button value="todos">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button> -->
+    <ion-segment-button value="N">
+      <ion-label>Norte</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="C">
+      <ion-label>Centro</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="S">
+      <ion-label>Sur</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-searchbar placeholder="Buscar Estacionamiento" class="ion-padding" (ionChange)="onSearchChange($event)"
+    mode="ios" animated></ion-searchbar>
+
+  @for (data of estacionamientos | filtroEstacionamiento:estacionamientoBuscar | filtroSector:sectorBuscar ; track
+  data.estSecuencial ) {
+  <ion-item lines="none" (click)="irADetalle(data)">
+    <!-- <ion-icon slot="start" name="caret-forward-outline" style="color:#244084"></ion-icon> -->
+    <ion-thumbnail slot="start">
+      <img alt="Silhouette of mountains" src="{{data.estImagen}}" />
+    </ion-thumbnail>
+    <ion-label style="color:#244084">{{data.estNombre}}</ion-label>
+  </ion-item>
+  }
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="qr-code-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
