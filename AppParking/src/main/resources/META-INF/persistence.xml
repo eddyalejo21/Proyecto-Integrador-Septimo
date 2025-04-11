@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="bd_app_parking"
+		transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:/bd_app_parking</jta-data-source>
+
+		<class>ec.gob.epmmop.appparking.modelo.Transaccion</class>
+		<class>ec.gob.epmmop.appparking.modelo.Usuario</class>
+		<class>ec.gob.epmmop.appparking.modelo.Parametros</class>
+		
+		<class>ec.gob.epmmop.appparking.modelo.Estacionamiento</class>
+		<class>ec.gob.epmmop.appparking.modelo.Horario</class>
+		<class>ec.gob.epmmop.appparking.modelo.HorarioEstacionamiento</class>
+		<class>ec.gob.epmmop.appparking.modelo.Tarifa</class>
+		<class>ec.gob.epmmop.appparking.modelo.TarifaEstacionamiento</class>
+		<class>ec.gob.epmmop.appparking.modelo.Ticket</class>
+		
+		<properties>
+			<property name="eclipselink.jdbc.cache-statements"
+				value="true" />
+			<property
+				name="eclipselink.persistence-context.close-on-commit" value="true" />
+			<property
+				name="eclipselink.persistence-context.persist-on-commit"
+				value="false" />
+			<property name="eclipselink.cache.size.default" value="0" />
+			<property name="eclipselink.cache.type.default" value="None" />
+			<property name="eclipselink.jdbc.uppercase-columns"
+				value="true" />
+			<property name="eclipselink.canonicalmodel.subpackage"
+				value="one" />
+
+		</properties>
+	</persistence-unit>
+
+<!-- 	<persistence-unit name="bd_sql_estacionamiento" -->
+<!-- 		transaction-type="JTA"> -->
+<!-- 		<jta-data-source>java:/bd_sql_estacionamiento</jta-data-source> -->
+
+<!-- 		<class>ec.gob.epmmop.estacionamientos.modelo.PlazasDisponibles</class> -->
+
+<!-- 		<properties> -->
+<!-- 			<property name="eclipselink.jdbc.cache-statements" -->
+<!-- 				value="true" /> -->
+<!-- 			<property -->
+<!-- 				name="eclipselink.persistence-context.close-on-commit" value="true" /> -->
+<!-- 			<property -->
+<!-- 				name="eclipselink.persistence-context.persist-on-commit" -->
+<!-- 				value="false" /> -->
+<!-- 			<property name="eclipselink.cache.size.default" value="0" /> -->
+<!-- 			<property name="eclipselink.cache.type.default" value="None" /> -->
+<!-- 			<property name="eclipselink.jdbc.uppercase-columns" -->
+<!-- 				value="true" /> -->
+<!-- 			<property name="eclipselink.canonicalmodel.subpackage" -->
+<!-- 				value="one" /> -->
+
+<!-- 		</properties> -->
+<!-- 	</persistence-unit> -->
+
+</persistence>
