@@ -1,6 +1,15 @@
-<app-header></app-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home" text=""></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
 
 <ion-content [fullscreen]="true">
+
+  <div align="center">
+    <ion-img src="assets/icon/util/quito_park_logo.svg" style="width: 50vw;"></ion-img>
+  </div>
+  
   <h1 class="ion-margin title">Inicio de Sesión</h1>
 
   <form [formGroup]="formLogin" (submit)="iniciarSesion()" class="formulario ion-margin">

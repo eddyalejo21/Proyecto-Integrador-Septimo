@@ -3,6 +3,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Estacionamiento } from 'src/app/model/estacionamientos';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-estacionamiento',
@@ -29,6 +30,11 @@ export class EstacionamientoPage implements OnInit {
   ngOnInit() {
     // this.estacionamiento = this.activatedRoute.snapshot.paramMap.get('idEstacionamiento')
     console.log('Estacioanamiento ==> ', this.estacionamiento.estNombre);
+  }
+
+  async abrirMapa(){
+    console.log('abrir', this.estacionamiento.estMaps);
+    await Browser.open({ url: this.estacionamiento.estMaps });
   }
 
 }

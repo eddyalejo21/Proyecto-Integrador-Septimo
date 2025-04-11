@@ -8,9 +8,9 @@
 
 <ion-content [fullscreen]="true">
 
-  <!-- <div align="center">
-    <ion-img src="assets/icon/util/logoQuitoATuAlcance.svg" style="width: 50vw;"></ion-img>
-  </div> -->
+  <div align="center">
+    <ion-img src="assets/icon/util/quito_park_logo.svg" style="width: 50vw;"></ion-img>
+  </div>
 
   <ion-card>
     <ion-card-header>
@@ -18,11 +18,19 @@
       <ion-card-subtitle>Estacionamiento</ion-card-subtitle>
     </ion-card-header>
     <div class="imagen-container" style.background-image="url('{{estacionamiento.estImagen}}')"></div>
-    <ion-card-header>
+    <!-- <ion-card-header>
       <ion-card-title><ion-badge style="font-size: larger;margin-right: 10px;color: #fff;" color="success">{{estacionamiento.estCapacidad}}</ion-badge></ion-card-title>
       <ion-card-subtitle>{{ estacionamiento.estCapacidad === 1 ? 'plaza disponible' : 'plazas disponibles' }}</ion-card-subtitle>
-    </ion-card-header>
-    
+    </ion-card-header> -->
+
+
+    <!-- <ion-button shape="round" expand="block" size="small"
+      mode="ios" href="{{ estacionamiento.estMaps }}">
+      <ion-icon slot="start" name="navigate-outline" style="margin-right: 20px;"></ion-icon>
+      <ion-label>Ir con Google Maps</ion-label>
+    </ion-button> -->
+
+
 
     <ion-card-content>
 
@@ -30,7 +38,7 @@
         <ion-label>Información</ion-label>
       </ion-item-divider>
 
-      <ion-item style="margin-bottom: 5px;" href="{{estacionamiento.estMapa}}" lines="none">
+      <ion-item style="margin-bottom: 5px;" lines="none" button href="{{ estacionamiento.estMaps }}">
         <ion-icon slot="start" name="location-outline" style="color: #244084;font-size: medium;font-weight: 600;">
         </ion-icon>
         <ion-label style="font-size: small;font-weight: 600;">{{ estacionamiento.estDireccion }}</ion-label>
@@ -46,11 +54,11 @@
       </ion-item-divider>
 
       @for (horario of horarios; track horario.descripcion ) {
-        <ion-item style="margin-bottom: 5px;" lines="none">
-          <ion-icon slot="start" name="cash-outline" style="color:#244084;font-size: medium;"></ion-icon>
-          <ion-label style="font-size: small;">{{ horario.detalle }}</ion-label>
-        </ion-item>
-        }
+      <ion-item style="margin-bottom: 5px;" lines="none">
+        <ion-icon slot="start" name="cash-outline" style="color:#244084;font-size: medium;"></ion-icon>
+        <ion-label style="font-size: small;">{{ horario.detalle }}</ion-label>
+      </ion-item>
+      }
 
       <ion-item-divider mode="ios">
         <ion-label>Tarifas</ion-label>
@@ -63,6 +71,12 @@
           fracción</ion-label>
       </ion-item>
       }
+
+      <ion-button shape="round" expand="block"  color="success"
+      mode="ios" href="{{ estacionamiento.estMaps }}">
+      <ion-icon slot="start" name="navigate-outline" style="margin-right: 20px;"></ion-icon>
+      <ion-label>Ir con Google Maps</ion-label>
+    </ion-button>
 
     </ion-card-content>
   </ion-card>

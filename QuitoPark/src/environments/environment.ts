@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   // URL_APP : "https://des.epmmop.gob.ec:8443/QuitoATuAlcanceWS/api",
   URL_APP : "http://localhost:8080/AppParking/api",
+  URL_P2P : "https://checkout-test.placetopay.ec",
 };
 
 /*

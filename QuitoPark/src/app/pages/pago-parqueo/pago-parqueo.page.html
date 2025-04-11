@@ -1,0 +1,96 @@
+<ion-header [translucent]="true" mode="ios" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Atrás"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div align="center">
+    <ion-img src="assets/icon/util/quito_park_logo.svg" style="width: 50vw;"></ion-img>
+  </div>
+
+  @if(sinDatos){
+  <form [formGroup]="formCodigoQR" (submit)="verificarTicket()" class="ion-no-padding" class="ion-margin">
+    <ion-item lines="none">
+      <ion-input type="tel" label="Ticket:" clearInput="true" mode="md" maxlength="16" formControlName="codigoTicket"
+        required="true" inputmode="tel"></ion-input>
+    </ion-item>
+
+    <ion-button style="margin-top: 15px;" shape="round" mode="ios" type="submit" expand="block"
+      [disabled]="formCodigoQR.invalid">BUSCAR
+    </ion-button>
+  </form>
+  }@else {
+
+  <div class="ion-margin">
+    <ion-list style="font-size: smaller;" lines="none">
+      <ion-item-group>
+        <ion-item-divider mode="ios">
+          <ion-label> Información de Ticket </ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">Estacionamiento:</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.nombreEstacionamiento}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">Ingreso:</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.ingreso}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">Vigencia:</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.tiempoPermanencia}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">Subtotal:</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.valorSubtotal | currency }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">IVA:</ion-label>
+          <ion-label slot="center"></ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.valorIva| currency}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" style="font-size: small;font-weight: bold;">Total a pagar:</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ticket.valorTotal | currency}}</ion-label>
+        </ion-item>
+      </ion-item-group>
+
+      <div align="center" style="margin-bottom: 20px; margin-top: 20px;">
+        <ion-img src="https://static.placetopay.com/placetopay-logo.svg" style="width: 40%;"></ion-img>
+      </div>
+
+      <ion-button fill="clear" expand="block" color="secondary"
+        style="margin-top: 15px;font-size: small;text-decoration: underline;font-weight: bold;">Leer políticas de
+        protección de datos</ion-button>
+
+      <ion-button fill="clear" expand="block" color="secondary"
+        style="margin-top: -10px; font-size: small;text-decoration: underline;font-weight: bold;">Leer términos y
+        condiciones</ion-button>
+
+      <ion-checkbox slot="start" aria-label="true" labelPlacement="end" style="color: var(--ion-color-primary);"
+        class="ion-padding" required="true">Si
+        acepto las políticas de protección de datos</ion-checkbox>
+
+      <ion-checkbox slot="start" aria-label="true" labelPlacement="end" style="color: var(--ion-color-primary);"
+        class="ion-padding" required="true">
+        Si acepto los términos y condiciones</ion-checkbox>
+
+      <ion-button expand="block" fill="outline" shape="round" class="ion-padding" mode="ios" type="submit"
+        (click)="procesarPlaceToPay()">
+        Pagar Place to Pay
+      </ion-button>
+
+
+      <div align="center" style="margin-bottom: 20px;margin-top: 15px;">
+        <ion-img src="assets/icon/utilitarios/franquicias.png" style="width: 40%;"></ion-img>
+      </div>
+
+
+    </ion-list>
+  </div>
+  }
+
+</ion-content>

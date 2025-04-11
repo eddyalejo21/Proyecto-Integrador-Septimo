@@ -2,7 +2,7 @@
 
 <ion-content [fullscreen]="true">
   <div align="center">
-    <ion-img src="assets/icon/util/logoQuitoATuAlcance.svg" style="width: 50vw;"></ion-img>
+    <ion-img src="assets/icon/util/quito_park_logo.svg" style="width: 50vw;"></ion-img>
   </div>
 
   <div class="title-container">
@@ -35,15 +35,17 @@
   <ion-item lines="none" (click)="irADetalle(data)">
     <!-- <ion-icon slot="start" name="caret-forward-outline" style="color:#244084"></ion-icon> -->
     <ion-thumbnail slot="start">
-      <img alt="Silhouette of mountains" src="{{data.estImagen}}" />
+      <img alt="{{data.estNombre}}" src="{{data.estImagen}}" />
     </ion-thumbnail>
     <ion-label style="color:#244084">{{data.estNombre}}</ion-label>
+    <ion-label slot="end">Disponibles</ion-label>
+    <ion-badge color="success" mode="ios" slot="end">{{data.estKalipso}}</ion-badge>
   </ion-item>
   }
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="qr-code-outline"></ion-icon>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button routerLink="/pago-parqueo" color="warning">
+      <ion-icon name="card-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

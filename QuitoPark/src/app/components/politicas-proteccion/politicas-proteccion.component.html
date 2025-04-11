@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarComponente()">
+        <ion-icon slot="start" name="close" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="container-logo">
+      <ion-img src="assets/icon/utilitarios/logoCobranding.svg" class="logo-empresa"></ion-img>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="height: 100vh">
+  <h1 class="title">Políticas de Privacidad</h1>
+
+  <div align="center" style="margin-bottom: 20px; margin-top: 20px;">
+    <ion-img src="https://static.placetopay.com/placetopay-logo.svg" style="width: 50%;"></ion-img>
+  </div>
+  <!-- <h1 style="text-align: center;">Protección de datos personales</h1> -->
+  <ion-text style="text-align: justify;">
+
+    <p>El titular de los datos acepta y emite su consentimiento unilateral de manera libre y voluntaria para el
+      tratamiento
+      de sus datos personales para que sean: recolectados a través de nuestros canales electrónicos o por cualquier
+      medio,
+      almacenados, procesados, transmitidos y eliminados o para ser objeto de cualquier tratamiento o conjunto de
+      tratamientos a realizar, ya sea por procedimientos técnicos de carácter automatizado, parcialmente automatizado o
+      no
+      automatizados por el Comercio o su delegado, con la finalidad de identificar, actualizar sus datos y ofrecerle
+      servicios y/o productos a través de los canales digitales o cualquier otro medio.</p>
+
+    <p>La transmisión y almacenamiento de la información recopilada por el Comercio o su delegado, será realizada en la
+      infraestructura que este administre, dentro o fuera del territorio ecuatoriano. Esta infraestructura puede ser
+      implementada en servidores físicos o en la nube de proveedores que cuenten con las debidas certificaciones
+      internacionales para el tratamiento de Seguridad de la Información.</p>
+
+    <p>Adicionalmente, mediante la presente el titular de los datos declara conocer y aceptar el Aviso de Política de
+      Privacidad de Placetopay en la cual se indican sus derechos, datos tratados y las actividades comerciales de los
+      aliados, así como otros datos de interés respecto a la protección de datos personales, que se encuentran
+      detallados en
+      el sitio web de Placetopay en la ruta <a (click)="abrirPoliticasExterna()" style="text-decoration: underline;">https://www.placetopay.com/web/politicas-de-privacidad/</a> , mediante la cual,
+      se
+      podrá solicitar la gestión de derechos o consentimientos.</p>
+
+    <p>El Comercio o su delegado notificará sobre las actualizaciones del Aviso de Política de Privacidad antes
+      mencionado
+      por
+      medio de los diferentes canales digitales.</p>
+      
+  </ion-text>
+</ion-content>

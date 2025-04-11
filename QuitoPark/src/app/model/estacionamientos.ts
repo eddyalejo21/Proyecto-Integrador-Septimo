@@ -7,7 +7,7 @@ export interface Estacionamiento {
     estGrupo?: string;
     estKalipso?: number;
     estImagen?: string;
-    estMapa?: string;
+    estMaps?: string;
     estEstadoah?: string;
     tarifas?: TarifaEstacionamiento[];
     horarios?: HorarioEstacionamiento[];
